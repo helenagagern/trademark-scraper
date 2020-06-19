@@ -34,10 +34,8 @@ function run () {
         if (currentPage < 5) {
           await Promise.all([
             await page.click('a.sc-lhVmIH.TfOQd.sc-kvZOFW.bHpWxE'),
-
+            await page.waitFor(2000),
             ])
-          page.once('load', () => console.info('✅ Page is loaded'));
-          page.on('error', error => console.error(`❌ ${error}`));
         }
         currentPage++;
       }
